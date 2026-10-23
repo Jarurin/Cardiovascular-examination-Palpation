@@ -2,74 +2,78 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#155e75">
 <title>เกมฝึกขั้นตอนการคลำ</title>
 <style>
-:root{--ink:#17324d;--muted:#5b7083;--teal:#0f766e;--teal2:#155e75;--pale:#e8f5f4;--paper:#fff;--line:#d9e5eb;--gold:#f4bd50;--good:#18794e;--bad:#b42318}
+:root{--ink:#18364a;--muted:#5e7482;--teal:#0f766e;--deep:#155e75;--line:#d7e5eb;--bg:#eef7fa;--green:#16834a;--red:#b42318}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;background:linear-gradient(145deg,#eef8fb,#f7f8fc 55%,#eaf5f2);color:var(--ink);min-height:100vh}
+body{margin:0;min-height:100vh;background:linear-gradient(140deg,#edf8fb,#f8f9fc 58%,#e9f5f1);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;color:var(--ink)}
 button{font:inherit;cursor:pointer}
-button:focus-visible,[draggable=true]:focus-visible{outline:3px solid #f4bd50;outline-offset:3px}
-.shell{max-width:1080px;margin:0 auto;padding:24px 16px 44px}
-header{text-align:center;padding:18px 12px 22px}
-.eyebrow{font-size:.85rem;font-weight:800;letter-spacing:.08em;color:var(--teal);text-transform:uppercase}
-h1{font-size:clamp(1.8rem,4vw,2.7rem);margin:7px 0;color:#123b50}
-.subtitle{color:var(--muted);margin:0 auto;max-width:700px;line-height:1.7}
-.tabs{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin:8px 0 22px}
-.tab{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:750;box-shadow:0 2px 5px #17324d08}
-.tab.active{background:var(--teal2);color:white;border-color:var(--teal2)}
-.panel{background:#ffffffde;border:1px solid #dce8ee;border-radius:24px;padding:clamp(16px,3vw,28px);box-shadow:0 16px 42px #21465a10}
-.game-head{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
-.game-head h2{margin:0 0 8px;font-size:1.4rem}
-.objective{margin:0;color:var(--muted);line-height:1.65;max-width:720px}
-.pill{background:#e4f4f1;color:#12675f;border-radius:999px;padding:7px 12px;font-size:.85rem;font-weight:800;white-space:nowrap}
-.instructions{margin:20px 0 18px;padding:12px 15px;background:#f0f7fa;border-radius:14px;color:#38566b;line-height:1.6}
-.stage{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.4fr);gap:22px;align-items:start}
-.box-zone{background:linear-gradient(180deg,#f4fbfc,#e8f5f5);border:1px solid #d2e8e7;border-radius:20px;padding:18px;text-align:center;position:relative;overflow:hidden}
-.box-art{width:150px;height:125px;margin:8px auto 10px;position:relative;transition:transform .15s}
-.box-body{position:absolute;left:16px;right:16px;bottom:5px;height:76px;background:#c98a48;border:3px solid #965c2c;border-radius:8px 8px 13px 13px;box-shadow:inset 0 -9px #b77839}
-.box-body:before{content:"";position:absolute;inset:8px 10px auto;height:10px;border-radius:4px;background:#e6b36f}
-.box-lid{position:absolute;left:8px;right:8px;top:20px;height:29px;background:#e2ad68;border:3px solid #965c2c;border-radius:7px;transform:rotate(-5deg);transform-origin:right center;transition:transform .3s,top .3s}
-.box-art.open .box-lid{transform:rotate(-28deg) translate(-10px,-20px)}
-.box-label{position:absolute;left:38px;right:38px;bottom:23px;background:#fff1ce;border:2px solid #965c2c;border-radius:5px;padding:5px 2px;font-weight:900;font-size:.77rem;color:#70421d}
-.box-zone h3{margin:7px 0 4px}
-.box-zone p{color:var(--muted);font-size:.92rem;line-height:1.5;margin:0 0 14px}
-.primary,.secondary{border:0;border-radius:12px;padding:11px 16px;font-weight:800;transition:transform .15s,filter .15s}
+button:focus-visible,[draggable=true]:focus-visible{outline:3px solid #f0b94b;outline-offset:3px}
+.shell{max-width:1050px;margin:auto;padding:20px 15px 40px}
+header{text-align:center;padding:15px 8px 20px}
+.eyebrow{font-size:.8rem;letter-spacing:.08em;font-weight:850;color:var(--teal)}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:6px 0 7px;color:#123b50}
+.subtitle{max-width:700px;margin:0 auto;color:var(--muted);line-height:1.65}
+.tabs{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:8px 0 20px}
+.tab{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:10px 15px;font-weight:800}
+.tab.active{background:var(--deep);border-color:var(--deep);color:white}
+.panel{background:#ffffffed;border:1px solid #dce8ee;border-radius:23px;padding:clamp(16px,3vw,28px);box-shadow:0 15px 40px #21465a0d;min-height:460px}
+.game-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+h2{font-size:clamp(1.25rem,3vw,1.55rem);margin:0 0 7px}
+.objective{color:var(--muted);margin:0;line-height:1.65}
+.pill{white-space:nowrap;background:#e4f4f1;color:#12675f;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.85rem}
+.page{display:none}.page.active{display:block}
+.center-page{text-align:center;padding:12px 0 20px}
+.stage-tag{display:inline-block;background:#eaf4f7;color:#386276;border-radius:999px;padding:6px 12px;font-weight:800;font-size:.84rem;margin-bottom:14px}
+.box-zone{max-width:510px;margin:0 auto;background:linear-gradient(180deg,#f4fbfc,#e8f5f5);border:1px solid #d2e8e7;border-radius:22px;padding:22px 18px}
+.box-art{width:190px;height:160px;margin:4px auto 14px;position:relative}
+.box-body{position:absolute;left:20px;right:20px;bottom:8px;height:96px;background:#c98a48;border:3px solid #965c2c;border-radius:9px 9px 14px 14px;box-shadow:inset 0 -10px #b77839}
+.box-body:before{content:"";position:absolute;left:12px;right:12px;top:12px;height:11px;border-radius:4px;background:#e6b36f}
+.box-lid{position:absolute;left:10px;right:10px;top:25px;height:35px;background:#e2ad68;border:3px solid #965c2c;border-radius:7px;transform:rotate(-4deg);transform-origin:right center}
+.box-label{position:absolute;left:46px;right:46px;bottom:30px;background:#fff1ce;border:2px solid #965c2c;border-radius:5px;padding:6px 2px;font-weight:900;font-size:.82rem;color:#70421d}
+.box-zone h3{margin:4px 0 6px;font-size:1.25rem}
+.box-zone p{color:var(--muted);margin:0 auto 18px;line-height:1.6;max-width:380px}
+.primary,.secondary{border:0;border-radius:12px;padding:12px 17px;font-weight:850;transition:transform .15s,filter .15s}
 .primary{background:var(--teal);color:white;box-shadow:0 4px 0 #075b55}
 .secondary{background:#edf3f6;color:#29485b;border:1px solid #d5e2e8}
 .primary:hover,.secondary:hover{filter:brightness(1.04);transform:translateY(-1px)}
 .primary:active,.secondary:active{transform:translateY(2px);box-shadow:none}
 .shaking .box-art{animation:shake .55s ease-in-out 2}
 @keyframes shake{0%,100%{transform:rotate(0) translateX(0)}20%{transform:rotate(-8deg) translateX(-7px)}40%{transform:rotate(8deg) translateX(7px)}60%{transform:rotate(-6deg) translateX(-5px)}80%{transform:rotate(6deg) translateX(5px)}}
-.play-area h3{margin:0 0 5px}
-.play-hint{font-size:.9rem;color:var(--muted);margin:0 0 12px;line-height:1.55}
+.instructions{background:#f0f7fa;border-radius:13px;padding:12px 14px;color:#38566b;line-height:1.6;margin-bottom:17px}
 .cards{display:grid;gap:9px}
-.card{display:flex;align-items:center;gap:11px;padding:12px 13px;border:1px solid #d8e4e9;background:white;border-radius:13px;box-shadow:0 2px 6px #16374a08;cursor:grab;user-select:none;transition:border-color .15s,background .15s,transform .15s}
-.card:active{cursor:grabbing}
-.card.dragging{opacity:.45;transform:scale(.98)}
-.card.drag-over{border:2px dashed var(--teal);background:#effaf8}
-.grip{color:#8297a5;font-size:1.15rem;letter-spacing:-3px;flex:none}
-.card-text{flex:1;line-height:1.55}
-.card-num{width:30px;height:30px;border-radius:9px;background:#eaf3f6;color:#3b5c6f;display:grid;place-items:center;font-weight:900;flex:none}
-.sort-note{font-size:.83rem;color:#708391;margin:12px 0 0}
+.card{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid #d8e4e9;background:white;border-radius:13px;box-shadow:0 2px 6px #16374a08;cursor:grab;user-select:none;transition:border-color .15s,background .15s,transform .15s}
+.card:active{cursor:grabbing}.card.dragging{opacity:.45;transform:scale(.985)}.card.drag-over{border:2px dashed var(--teal);background:#effaf8}
+.grip{color:#8297a5;font-size:1.1rem;flex:none;letter-spacing:-3px}
+.card-num{width:31px;height:31px;border-radius:9px;background:#eaf3f6;color:#3b5c6f;display:grid;place-items:center;font-weight:900;flex:none}
+.card-text{flex:1;line-height:1.55;overflow-wrap:anywhere}
+.sort-controls{display:flex;gap:4px;flex:none}
+.arrow{border:1px solid #d5e2e8;background:#f3f7f9;color:#31566b;border-radius:8px;min-width:32px;height:32px;font-weight:900;padding:3px 7px}
+.arrow:disabled{opacity:.28;cursor:not-allowed}
+.checkmark{color:var(--green);font-size:1.55rem;font-weight:950;width:68px;text-align:center;flex:none}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.actions button{flex:1;min-width:130px}
-.feedback{margin-top:16px;border-radius:13px;padding:13px 15px;line-height:1.6;display:none}
-.feedback.show{display:block}
-.feedback.good{background:#e8f7ef;border:1px solid #b7e4c9;color:#14623f}
-.feedback.bad{background:#fff0ee;border:1px solid #f2c2bd;color:#922b22}
-.footer{text-align:center;color:#718594;font-size:.82rem;margin-top:20px;line-height:1.6}
-.hidden{display:none!important}
-@media(max-width:720px){.stage{grid-template-columns:1fr}.box-zone{display:grid;grid-template-columns:110px 1fr;column-gap:12px;text-align:left;align-items:center}.box-art{grid-row:1/4;width:105px;height:100px;margin:0 auto}.box-body{left:10px;right:10px;height:60px}.box-lid{left:4px;right:4px;top:17px;height:24px}.box-label{left:23px;right:23px;bottom:18px;font-size:.58rem}.box-zone h3{align-self:end}.box-zone p{margin-bottom:8px}.box-zone .primary{grid-column:1/-1}.panel{border-radius:19px}}
+.actions button{flex:1;min-width:180px}
+.feedback{display:none;margin-top:15px;border-radius:13px;padding:13px 15px;line-height:1.6}
+.feedback.show{display:block}.feedback.good{background:#e8f7ef;border:1px solid #b7e4c9;color:#14623f}.feedback.bad{background:#fff0ee;border:1px solid #f2c2bd;color:#922b22}
+.answer-intro{text-align:center;margin:0 auto 17px;line-height:1.65;color:var(--muted)}
+.answer-list{max-width:850px;margin:0 auto}
+.answer-list .card{cursor:default;background:#fbfefd;border-color:#d8eadf}
+.answer-list .card-num{background:#e7f6ec;color:#176d3e}
+.answer-list .grip{display:none}
+.answer-list .checkmark{width:68px}
+.answer-actions{max-width:850px;margin:20px auto 0}
+.footer{text-align:center;color:#718594;font-size:.82rem;margin-top:19px;line-height:1.6}
+@media(max-width:600px){.panel{border-radius:18px}.box-zone{padding:18px 12px}.card{gap:7px;padding:9px}.card-text{font-size:.94rem}.arrow{min-width:29px;height:30px}.actions button{min-width:100%}.box-art{transform:scale(.92);margin-top:-2px;margin-bottom:5px}}
 </style>
 </head>
 <body>
 <div class="shell">
 <header>
-  <div class="eyebrow">Nursing Skills · Interactive Learning</div>
+  <div class="eyebrow">NURSING SKILLS · INTERACTIVE LEARNING</div>
   <h1>เกมฝึกขั้นตอนการคลำ</h1>
-  <p class="subtitle">ฝึกเรียงลำดับขั้นตอนการตรวจคลำหัวใจ เลือกเกม กด “เขย่า” เพื่อสุ่มข้อความ แล้วลากการ์ดเรียงลำดับให้ถูกต้อง</p>
+  <p class="subtitle">ฝึกเรียงลำดับขั้นตอนการตรวจคลำหัวใจ ผ่านการเขย่ากล่องข้อความและจัดลำดับให้ถูกต้อง</p>
 </header>
 <nav class="tabs" aria-label="เลือกเกม">
   <button class="tab active" data-game="heave">เกมที่ 1 · Heave</button>
@@ -78,127 +82,114 @@ h1{font-size:clamp(1.8rem,4vw,2.7rem);margin:7px 0;color:#123b50}
 </nav>
 <main class="panel">
   <div class="game-head">
-    <div><h2 id="gameTitle">เกมที่ 1: เรียงลำดับขั้นตอนการคลำ Heave</h2><p class="objective" id="objective"></p></div>
-    <div class="pill" id="countPill">9 ขั้นตอน</div>
+    <div><h2 id="gameTitle"></h2><p class="objective" id="objective"></p></div>
+    <div class="pill" id="countPill"></div>
   </div>
-  <div class="instructions">วิธีเล่น: กดปุ่ม <strong>เขย่ากล่อง</strong> เพื่อสุ่มข้อความ จากนั้นลากข้อความขึ้นหรือลงเพื่อจัดลำดับ ตรวจคำตอบได้เมื่อจัดเรียงครบทุกข้อ</div>
-  <div class="stage">
-    <section class="box-zone" id="boxZone">
-      <div class="box-art" id="boxArt" aria-hidden="true"><div class="box-lid"></div><div class="box-body"></div><div class="box-label">ข้อความปริศนา</div></div>
-      <h3>กล่องข้อความ</h3>
-      <p id="boxStatus">ข้อความยังอยู่ในกล่อง พร้อมเริ่มฝึกหรือยัง?</p>
-      <button class="primary" id="shakeBtn">↻ เขย่ากล่อง</button>
-    </section>
-    <section class="play-area">
-      <h3>เรียงลำดับขั้นตอน</h3>
-      <p class="play-hint">ลากการ์ดเพื่อสลับตำแหน่ง หรือใช้ปุ่มลูกศรขึ้น/ลงบนการ์ดเพื่อจัดลำดับด้วยคีย์บอร์ด</p>
-      <div class="cards" id="cards" aria-live="polite"></div>
-      <p class="sort-note">หมายเหตุ: ตำแหน่งหมายเลขด้านซ้ายคือ ลำดับที่ผู้เล่นเลือก</p>
-    </section>
-  </div>
-  <div class="actions">
-    <button class="primary" id="checkBtn">ตรวจคำตอบ</button>
-    <button class="secondary" id="showBtn">ดูเฉลย</button>
-    <button class="secondary" id="resetBtn">เริ่มใหม่ / สุ่มอีกครั้ง</button>
-  </div>
-  <div class="feedback" id="feedback" role="status"></div>
+
+  <section class="page active" id="page1">
+    <div class="center-page">
+      <div class="stage-tag">หน้า 1 จาก 3 · เขย่ากล่องข้อความ</div>
+      <div class="box-zone" id="boxZone">
+        <div class="box-art" aria-hidden="true"><div class="box-lid"></div><div class="box-body"></div><div class="box-label">ข้อความปริศนา</div></div>
+        <h3>พร้อมเขย่ากล่องหรือยัง?</h3>
+        <p>ภายในกล่องมีข้อความขั้นตอนการคลำหัวใจ เมื่อเขย่าแล้ว ข้อความจะถูกสุ่มลำดับเพื่อให้คุณจัดเรียงใหม่</p>
+        <button class="primary" id="shakeBtn">↻ เขย่ากล่อง</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="page2">
+    <div class="stage-tag">หน้า 2 จาก 3 · เรียงลำดับข้อความ</div>
+    <div class="instructions">ลากการ์ดขึ้นหรือลงเพื่อจัดลำดับ หรือใช้ปุ่มลูกศร ↑ ↓ ทางขวาของแต่ละข้อความ จากนั้นกด “ตรวจคำตอบ” หากต้องการดูเฉลย ให้กด “ยอมแพ้/ขอดูเฉลย”</div>
+    <div class="cards" id="cards" aria-live="polite"></div>
+    <div class="actions">
+      <button class="primary" id="checkBtn">ตรวจคำตอบ</button>
+      <button class="secondary" id="giveUpBtn">ยอมแพ้/ขอดูเฉลย</button>
+    </div>
+    <div class="feedback" id="feedback" role="status"></div>
+  </section>
+
+  <section class="page" id="page3">
+    <div class="stage-tag">หน้า 3 จาก 3 · เฉลย</div>
+    <p class="answer-intro" id="answerIntro">เฉลยลำดับขั้นตอนที่ถูกต้อง เครื่องหมายถูกสีเขียวแสดงว่าข้อความอยู่ในลำดับเฉลยแล้ว</p>
+    <div class="cards answer-list" id="answerList"></div>
+    <div class="answer-actions">
+      <button class="primary" id="restartBtn" style="width:100%">↻ เริ่มใหม่/สุ่มอีกครั้ง</button>
+    </div>
+  </section>
 </main>
-<div class="footer">สื่อฝึกทบทวนเพื่อการเรียนรู้ · ใช้ประกอบการเรียนการสอน ไม่ทดแทนแนวทางปฏิบัติและการประเมินโดยผู้สอน</div>
+<div class="footer">สื่อฝึกทบทวนเพื่อการเรียนรู้ · ใช้ประกอบการเรียนการสอน และควรตรวจสอบความถูกต้องของขั้นตอนตามเอกสารอ้างอิงของรายวิชา</div>
 </div>
 <script>
-const games = {
-  heave: {
-    title:"เกมที่ 1: เรียงลำดับขั้นตอนการคลำ Heave",
-    objective:"ให้นิสิตเลือกตำแหน่งวางมือและเรียงลำดับขั้นตอนการคลำแรงกระแทกของหัวใจห้องล่าง",
-    steps:[
-      "แนะนำตัวและแจ้งวัตถุประสงค์",
-      "จัดสิ่งแวดล้อมให้เหมาะสม",
-      "จัดผู้รับบริการให้อยู่ในท่าที่เหมาะสมและเปิดบริเวณทรวงอก",
-      "คลำ Right ventricular heave โดยวางส้นมือบริเวณด้านซ้ายของกระดูก sternum โดยวางมือตามแนวยาวของลำตัว",
-      "ประเมินว่ามีแรงยกหรือแรงกระแทก (lifting impulse) มากระทบฝ่ามือหรือไม่",
-      "คลำ Left ventricular heave โดยวางส้นมือบริเวณ apex ของหัวใจ",
-      "หันปลายมือไปทางด้านข้าง",
-      "ประเมินแรงกระแทกจากหัวใจที่มากระทบมือ",
-      "บันทึกผลการตรวจตามสิ่งที่พบ"
-    ]
-  },
-  thrill: {
-    title:"เกมที่ 2: เรียงลำดับขั้นตอนการคลำ Thrill",
-    objective:"ให้นิสิตระบุตำแหน่งและวิธีคลำการสั่นสะเทือนบริเวณลิ้นหัวใจ",
-    steps:[
-      "แนะนำตัวและแจ้งวัตถุประสงค์",
-      "จัดสิ่งแวดล้อมให้เหมาะสม",
-      "จัดผู้รับบริการให้อยู่ในท่าที่เหมาะสมและเปิดทรวงอก",
-      "ใช้ฝ่ามือบริเวณโคนนิ้วมือทั้งสี่ (metacarpophalangeal joints) คลำบริเวณตำแหน่งฟังเสียงลิ้นหัวใจทั้ง 4 ตำแหน่ง",
-      "ประเมินว่ามีการสั่นสะเทือนคล้ายเสียงครางที่สัมผัสได้หรือไม่",
-      "หากคลำพบ Thrill ให้ระบุตำแหน่งที่พบและบันทึกผล"
-    ]
-  },
-  pmi: {
-    title:"เกมที่ 3: เรียงลำดับขั้นตอนการคลำ PMI",
-    objective:"ให้นิสิตระบุตำแหน่งยอดหัวใจและวิธีคลำ Point of Maximal Impulse (PMI)",
-    steps:[
-      "แนะนำตัวและแจ้งวัตถุประสงค์",
-      "จัดสิ่งแวดล้อมให้เหมาะสม",
-      "ตรวจดูบริเวณหน้าอกด้านซ้ายเพื่อสังเกต apical impulse",
-      "หากมองไม่เห็น ให้ใช้นิ้วมือ 4 นิ้วคลำบริเวณยอดหัวใจ",
-      "ระบุตำแหน่งที่หัวใจเต้นแรงที่สุด โดยปกติอยู่บริเวณช่องซี่โครงที่ 5 ด้านซ้าย ตัดกับแนวกึ่งกลางกระดูกไหปลาร้า (left midclavicular line)",
-      "หากคลำพบหลายตำแหน่ง ให้เลือกตำแหน่งที่อยู่ต่ำที่สุดและด้านข้างที่สุด",
-      "บันทึกตำแหน่งและขนาดของบริเวณที่คลำได้"
-    ]
-  }
+const games={
+heave:{title:"เกมที่ 1: เรียงลำดับขั้นตอนการคลำ Heave",objective:"ให้นิสิตเลือกตำแหน่งวางมือและเรียงลำดับขั้นตอนการคลำแรงกระแทกของหัวใจห้องล่าง",steps:[
+"แนะนำตัวและแจ้งวัตถุประสงค์",
+"จัดสิ่งแวดล้อมให้เหมาะสม",
+"จัดผู้รับบริการให้อยู่ในท่าที่เหมาะสมและเปิดบริเวณทรวงอก",
+"คลำ Right ventricular heave โดยวางส้นมือบริเวณด้านซ้ายของกระดูก sternum โดยวางมือตามแนวยาวของลำตัว",
+"ประเมินว่ามีแรงยกหรือแรงกระแทก (lifting impulse) มากระทบฝ่ามือหรือไม่",
+"คลำ Left ventricular heave โดยวางส้นมือบริเวณ apex ของหัวใจ",
+"หันปลายมือไปทางด้านข้าง",
+"ประเมินแรงกระแทกจากหัวใจที่มากระทบมือ",
+"บันทึกผลการตรวจตามสิ่งที่พบ"]},
+thrill:{title:"เกมที่ 2: เรียงลำดับขั้นตอนการคลำ Thrill",objective:"ให้นิสิตระบุตำแหน่งและวิธีคลำการสั่นสะเทือนบริเวณลิ้นหัวใจ",steps:[
+"แนะนำตัวและแจ้งวัตถุประสงค์",
+"จัดสิ่งแวดล้อมให้เหมาะสม",
+"จัดผู้รับบริการให้อยู่ในท่าที่เหมาะสมและเปิดทรวงอก",
+"ใช้ฝ่ามือบริเวณโคนนิ้วมือทั้งสี่ (metacarpophalangeal joints) คลำบริเวณตำแหน่งฟังเสียงลิ้นหัวใจทั้ง 4 ตำแหน่ง",
+"ประเมินว่ามีการสั่นสะเทือนคล้ายเสียงครางที่สัมผัสได้หรือไม่",
+"หากคลำพบ Thrill ให้ระบุตำแหน่งที่พบและบันทึกผล"]},
+pmi:{title:"เกมที่ 3: เรียงลำดับขั้นตอนการคลำ PMI",objective:"ให้นิสิตระบุตำแหน่งยอดหัวใจและวิธีคลำ Point of Maximal Impulse (PMI)",steps:[
+"แนะนำตัวและแจ้งวัตถุประสงค์",
+"จัดสิ่งแวดล้อมให้เหมาะสม",
+"ตรวจดูบริเวณหน้าอกด้านซ้ายเพื่อสังเกต apical impulse",
+"หากมองไม่เห็น ให้ใช้นิ้วมือ 4 นิ้วคลำบริเวณยอดหัวใจ",
+"ระบุตำแหน่งที่หัวใจเต้นแรงที่สุด โดยปกติอยู่บริเวณช่องซี่โครงที่ 5 ด้านซ้าย ตัดกับแนวกึ่งกลางกระดูกไหปลาร้า (left midclavicular line)",
+"หากคลำพบหลายตำแหน่ง ให้เลือกตำแหน่งที่อยู่ต่ำที่สุดและด้านข้างที่สุด",
+"บันทึกตำแหน่งและขนาดของบริเวณที่คลำได้"]}
 };
-let current="heave", order=[], shuffled=false, dragIndex=null, checked=false;
 const $=id=>document.getElementById(id);
-function shuffleArray(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}if(a.every((x,i)=>x===i)&&a.length>1)[a[0],a[1]]=[a[1],a[0]];return a}
-function setFeedback(msg,type){const el=$("feedback");el.textContent=msg;el.className="feedback show "+type}
-function clearFeedback(){const el=$("feedback");el.textContent="";el.className="feedback"}
-function render(){
- const g=games[current]; $("gameTitle").textContent=g.title;$("objective").textContent="วัตถุประสงค์: "+g.objective;$("countPill").textContent=g.steps.length+" ขั้นตอน";
- const cards=$("cards");cards.innerHTML="";
+let current="heave",order=[],dragFrom=null,shaking=false;
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}if(b.length>1&&b.every((v,i)=>v===i))[b[0],b[1]]=[b[1],b[0]];return b}
+function setPage(n){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page"+n));}
+function clearFeedback(){const f=$("feedback");f.className="feedback";f.textContent=""}
+function updateHeader(){const g=games[current];$("gameTitle").textContent=g.title;$("objective").textContent="วัตถุประสงค์: "+g.objective;$("countPill").textContent=g.steps.length+" ขั้นตอน"}
+function renderCards(){
+ const root=$("cards");root.innerHTML="";const g=games[current];
  order.forEach((stepIndex,pos)=>{
   const card=document.createElement("div");card.className="card";card.draggable=true;card.tabIndex=0;card.dataset.pos=pos;
-  card.innerHTML=`<span class="grip" aria-hidden="true">⠿</span><span class="card-num">${pos+1}</span><span class="card-text"></span><span class="sort-controls"><button class="secondary up" aria-label="เลื่อนขึ้น" title="เลื่อนขึ้น" style="padding:5px 8px;margin-right:3px">↑</button><button class="secondary down" aria-label="เลื่อนลง" title="เลื่อนลง" style="padding:5px 8px">↓</button></span>`;
-  card.querySelector(".card-text").textContent=g.steps[stepIndex];
-  card.addEventListener("dragstart",e=>{dragIndex=pos;card.classList.add("dragging");e.dataTransfer.effectAllowed="move";e.dataTransfer.setData("text/plain",String(pos))});
-  card.addEventListener("dragend",()=>{card.classList.remove("dragging");document.querySelectorAll(".card").forEach(c=>c.classList.remove("drag-over"))});
+  const grip=document.createElement("span");grip.className="grip";grip.textContent="⠿";
+  const num=document.createElement("span");num.className="card-num";num.textContent=pos+1;
+  const text=document.createElement("span");text.className="card-text";text.textContent=g.steps[stepIndex];
+  const controls=document.createElement("span");controls.className="sort-controls";
+  const up=document.createElement("button");up.className="arrow";up.textContent="↑";up.title="เลื่อนขึ้น";up.setAttribute("aria-label","เลื่อนขึ้น");up.disabled=pos===0;up.addEventListener("click",()=>move(pos,pos-1));
+  const down=document.createElement("button");down.className="arrow";down.textContent="↓";down.title="เลื่อนลง";down.setAttribute("aria-label","เลื่อนลง");down.disabled=pos===order.length-1;down.addEventListener("click",()=>move(pos,pos+1));
+  controls.append(up,down);card.append(grip,num,text,controls);
+  card.addEventListener("dragstart",e=>{dragFrom=pos;card.classList.add("dragging");e.dataTransfer.effectAllowed="move";e.dataTransfer.setData("text/plain",String(pos))});
+  card.addEventListener("dragend",()=>{dragFrom=null;document.querySelectorAll(".card").forEach(c=>c.classList.remove("dragging","drag-over"))});
   card.addEventListener("dragover",e=>{e.preventDefault();card.classList.add("drag-over");e.dataTransfer.dropEffect="move"});
   card.addEventListener("dragleave",()=>card.classList.remove("drag-over"));
-  card.addEventListener("drop",e=>{e.preventDefault();card.classList.remove("drag-over");const from=dragIndex!==null?dragIndex:Number(e.dataTransfer.getData("text/plain"));move(from,pos)});
-  card.querySelector(".up").addEventListener("click",e=>{e.stopPropagation();move(pos,pos-1)});
-  card.querySelector(".down").addEventListener("click",e=>{e.stopPropagation();move(pos,pos+1)});
-  card.querySelector(".up").disabled=pos===0;card.querySelector(".down").disabled=pos===order.length-1;
+  card.addEventListener("drop",e=>{e.preventDefault();const from=dragFrom===null?Number(e.dataTransfer.getData("text/plain")):dragFrom;move(from,pos)});
   card.addEventListener("keydown",e=>{if(e.altKey&&e.key==="ArrowUp"){e.preventDefault();move(pos,pos-1)}if(e.altKey&&e.key==="ArrowDown"){e.preventDefault();move(pos,pos+1)}});
-  cards.appendChild(card);
+  root.appendChild(card);
  });
 }
-function move(from,to){if(from<0||to<0||from>=order.length||to>=order.length||from===to)return;const [item]=order.splice(from,1);order.splice(to,0,item);checked=false;clearFeedback();render()}
-function shake(){
- shuffled=true;checked=false;clearFeedback();$("boxZone").classList.remove("shaking");void $("boxZone").offsetWidth;$("boxZone").classList.add("shaking");$("boxArt").classList.add("open");$("boxStatus").textContent="เขย่าแล้ว! ข้อความถูกสลับลำดับ ลากการ์ดเพื่อเรียงให้ถูกต้อง";$("shakeBtn").disabled=true;
- setTimeout(()=>{$("boxZone").classList.remove("shaking");$("shakeBtn").disabled=false},1100);
- order=shuffleArray(order.length?order.map((_,i)=>i):games[current].steps.map((_,i)=>i));
- // Always shuffle original step identities, independent of previous arrangement.
- order=shuffleArray(games[current].steps.map((_,i)=>i));
- render();
+function move(from,to){if(from<0||to<0||from>=order.length||to>=order.length||from===to)return;const item=order.splice(from,1)[0];order.splice(to,0,item);clearFeedback();renderCards()}
+function showAnswer(){order=games[current].steps.map((_,i)=>i);const root=$("answerList");root.innerHTML="";games[current].steps.forEach((step,i)=>{const row=document.createElement("div");row.className="card";const num=document.createElement("span");num.className="card-num";num.textContent=i+1;const text=document.createElement("span");text.className="card-text";text.textContent=step;const check=document.createElement("span");check.className="checkmark";check.setAttribute("aria-label","ลำดับถูกต้อง");check.textContent="✓";row.append(num,text,check);root.appendChild(row)});setPage(3)}
+function startGame(game){current=game;order=[];clearFeedback();updateHeader();document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.game===current));setPage(1)}
+function shakeBox(){
+ if(shaking)return;shaking=true;const zone=$("boxZone");zone.classList.remove("shaking");void zone.offsetWidth;zone.classList.add("shaking");$("shakeBtn").disabled=true;
+ setTimeout(()=>{zone.classList.remove("shaking");shaking=false;$("shakeBtn").disabled=false;order=shuffle(games[current].steps.map((_,i)=>i));renderCards();clearFeedback();setPage(2)},1050);
 }
-function startGame(game,doShuffle=true){
- current=game;shuffled=false;checked=false;order=games[current].steps.map((_,i)=>i);clearFeedback();
- document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.game===current));
- $("boxArt").classList.remove("open");$("boxStatus").textContent="ข้อความยังอยู่ในกล่อง พร้อมเริ่มฝึกหรือยัง?";render();
- if(doShuffle) shake();
-}
-$("shakeBtn").addEventListener("click",shake);
+$("shakeBtn").addEventListener("click",shakeBox);
 $("checkBtn").addEventListener("click",()=>{
- if(!shuffled){setFeedback("กด “เขย่ากล่อง” เพื่อสุ่มข้อความก่อนตรวจคำตอบ","bad");return}
- const correct=order.every((v,i)=>v===i);
- if(correct)setFeedback("ถูกต้องทั้งหมด! เรียงลำดับขั้นตอนได้ครบถ้วนแล้ว 🎉","good");
- else {let n=0;order.forEach((v,i)=>{if(v===i)n++});setFeedback(`ยังไม่ถูกต้อง มี ${n} จาก ${order.length} ข้อที่อยู่ในตำแหน่งถูกต้อง ลองจัดลำดับอีกครั้งนะ`,"bad")}
- checked=true;
+ const total=order.length;const correct=order.reduce((sum,v,i)=>sum+(v===i?1:0),0);
+ if(correct===total){showAnswer()}else{const f=$("feedback");f.className="feedback show bad";f.textContent=`ยังไม่ถูกต้อง มี ${correct} จาก ${total} ข้อที่อยู่ในตำแหน่งที่ถูกต้อง ลองจำลำดับใหม่อีกครั้งนะคะ`}
 });
-$("showBtn").addEventListener("click",()=>{order=games[current].steps.map((_,i)=>i);shuffled=true;render();setFeedback("แสดงเฉลยแล้ว ลำดับข้อความเรียงตามขั้นตอนที่กำหนดไว้","good");$("boxArt").classList.add("open");$("boxStatus").textContent="นี่คือลำดับเฉลยสำหรับทบทวน";});
-$("resetBtn").addEventListener("click",()=>{order=games[current].steps.map((_,i)=>i);shake()});
-document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>startGame(b.dataset.game,true)));
-startGame("heave",false);
+$("giveUpBtn").addEventListener("click",showAnswer);
+$("restartBtn").addEventListener("click",()=>{order=[];clearFeedback();setPage(1)});
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>startGame(b.dataset.game)));
+startGame("heave");
 </script>
 </body>
 </html>
